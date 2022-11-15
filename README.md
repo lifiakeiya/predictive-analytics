@@ -44,3 +44,41 @@ Data yang saya gunakan yakni diunduh dari situs Kaggle yang berisi indeks harga 
 •	Violent Crimes = Kekerasan
 
 •	Homicides = Pembunuhan
+
+![image](https://user-images.githubusercontent.com/59913378/201852488-7e5caf3e-d0af-4d23-bba4-1b6116dd06f2.png)
+![image](https://user-images.githubusercontent.com/59913378/201852807-5546a8a8-faaa-4be6-8d13-0efb50ae979f.png)
+
+Dari gambar diatas dijelaskan bahwa didalam data terdapat 1 data kategori bertipe object dan 8 data numerik float64. Visualisasi data kategori sebagai berikut.
+![image](https://user-images.githubusercontent.com/59913378/201857655-dc517859-2461-4a25-b573-8cf727dc69bc.png)
+
+Untuk visualisasi distribusi data pada kolom dengan numeric features dan antar numeric features sebagai berikut.
+![image](https://user-images.githubusercontent.com/59913378/201857596-58354dc1-43d4-4043-94d3-acac79167a49.png)
+
+Untuk visualisasi heatmap (korelasi numeric features) adalah sebagai berikut.
+![image](https://user-images.githubusercontent.com/59913378/201858094-17cbf1ef-ca93-4fcb-bd66-4fc9c5b97a0b.png)
+
+# Data Preperation
+• Train-Test-split, teknik ini berguna untuk membagi data menjadi data uji dan data latih. Teknik ini menggunakan fungsi train_test_split dari library scikit-learn.
+
+• Standarisasi, teknik ini membuat fitur data menjadi bentuk yang lebih mudah diolah oleh algoritma. Di sini kita mengurangkan mean (nilai rata-rata) pada seluruh fitur numerik kemudian membaginya dengan standar deviasi untuk menggeser distribusi menggunakan fungsi StandardScaler() dari library scikit-learn. Setelah kita mengecek informasi menggunakan fungsi .describe(), kita mengetahui bahwa mean pada fitur numerik berubah menjadi 0 dan standar deviasi-nya menjadi 1.
+
+# Modelling
+![image](https://user-images.githubusercontent.com/59913378/201859187-692a61e2-a724-4517-b0e3-7d45d0b91871.png)
+
+Tahap diatas untuk mengembangkan model machine learning dengan Linear Regression, K-Nearest Neighbor, Random Forest. Langkah selanjutnya yakni mengevaluasi performa masing-masing algoritma dan menentukan algoritma mana yang memberikan hasil prediksi terbaik. 
+# Evaluation
+![image](https://user-images.githubusercontent.com/59913378/201860044-f6a8cfa4-6981-4590-9a3e-6c6c539e8fa9.png)
+
+Kode program diatas adalah teknik yang bertujuan untuk menghitung selisih rata-rata nilai sebenarnya dengan nilai prediksi biasa disebut dengan Mean Squared Error (MSE). Ouput yang akan dikeluarkan ialah: 
+
+![image](https://user-images.githubusercontent.com/59913378/201860427-4b180498-80a9-49ea-bddb-6c10f5693844.png)
+![image](https://user-images.githubusercontent.com/59913378/201860843-ccb42815-233c-4bdd-986a-80156d63b155.png)
+
+Dari hasil diatas dapat disimpulkan kalau Random Forest mempunyai eror paling sedikit.
+
+Terakhir, Mengukur kinerja model menggunakan fungsi .score() dalam skala 100.
+
+![image](https://user-images.githubusercontent.com/59913378/201861200-8fa28441-9cd7-40d2-9f0b-b211fb42ac8c.png)
+
+dari hasil diatas dapat dilihat akurasi pada model Random Forest yang paling tinggi, mencapai 90%
+
