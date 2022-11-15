@@ -8,7 +8,5 @@ Salah satu tantangan yang dihadapi operasi penjualan adalah kondisi lingkungan. 
 Perusahaan yang menjual rumah akan menjual rumah di tempat yang kondisi lingkungannya baik, dimana ada kasus kriminal pasti perusahaan akan bertanya-tanya apakah rumah yang kita jual akan laris manis dipasaran? Dengan sedikitnya jumlah kriminal maka diharapkan akan semakin meningkat harga jual rumahnya.
 # Problem Statements
 Berdasarkan situasi di atas, perusahaan akan mengembangkan sistem prediksi harga rumah untuk mengatasi masalah berikut:
-
 • Di antara ciri-ciri atau syarat-syarat pidana, ciri-ciri manakah yang paling berpengaruh terhadap harga jual rumah?
-
 • Jika rumah tersebut memiliki ciri atau kondisi kriminal tertentu, berapa harga jualnya?
