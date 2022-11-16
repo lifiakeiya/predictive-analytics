@@ -1,7 +1,7 @@
 # predictive-analytics
 submission dicoding terapan
 # Domain Proyek
-Untuk proyek ini, saya telah memilih proyek di bidang ekonomi dan bisnis. Dalam dunia bisnis, para pebisnis berusaha mencari cara untuk meningkatkan keuntungan bisnis. Hal yang sama berlaku untuk bisnis penjualan rumah. Dalam prakteknya dalam persaingan pasti ada tantangan dan hambatan, namun para pelaku bisnis harus mampu memutar otak agar tantangan dan hambatan tersebut tidak menjadi hambatan dalam berbisnis. 
+Oada project kali ini ialah proyek di bidang ekonomi dan bisnis. Dalam dunia bisnis, para pebisnis berusaha mencari cara untuk meningkatkan keuntungan bisnis. Hal yang sama berlaku untuk bisnis penjualan rumah. Dalam prakteknya dalam persaingan pasti ada tantangan dan hambatan, namun para pelaku bisnis harus mampu memutar otak agar tantangan dan hambatan tersebut tidak menjadi hambatan dalam berbisnis. 
 
 Salah satu tantangan yang dihadapi operasi penjualan adalah kondisi lingkungan. Kondisi lingkungan di sini seperti maraknya kejahatan, kekerasan, penjarahan, dll. Namun, apakah kondisi lingkungan tersebut memberikan peluang bagi para pelaku bisnis untuk menjalankan usahanya, atau justru sebaliknya? Dalam memprediksi permasalahan tersebut saya menggunakan 3 algoritma, yakni Linear Regression, KNN, dan Random Forest.
 # Bussiness understanding
@@ -25,7 +25,7 @@ Untuk menjawab pertanyaan ini, kami akan melakukan pemodelan prediktif dengan tu
 
 •	Random Forest. Pemilihan metode Random Forest sebagai metode prediksi pada penelitian ini didasari oleh kelebihannya yaitu dapat mengatasi noise dan missing value serta dapat mengatasi data dalam jumlah yang besar. Dan kekurangan pada algoritma Random Forest yaitu interpretasi yang sulit dan membutuhkan tuning model yang tepat untuk data. Cara kerja Random Forest yakni dengan memanggil fungsi RandomForestRegressor() yang kita import dari library scikit-learn.
 # Data Understanding
-Data yang saya gunakan yakni diunduh dari situs Kaggle yang berisi indeks harga nsa atau non seasonal index yang merupakan fitur yang akan diprediksi, fitur yang lain merupakan kondisi kriminal di sekitar rumah tersebut yang akan menjadi pertimbangan dalam prediksi ini. Deskripsi variabel pada dataset adalah sebagai berikut:
+Data yang digunakan yakni diunduh dari situs Kaggle yang berisi indeks harga nsa atau non seasonal index yang merupakan fitur yang akan diprediksi, fitur yang lain merupakan kondisi kriminal di sekitar rumah tersebut yang akan menjadi pertimbangan dalam prediksi ini. Deskripsi variabel pada dataset adalah sebagai berikut:
 
 •	Year = Tahun
 
@@ -60,7 +60,7 @@ Untuk visualisasi heatmap (korelasi numeric features) adalah sebagai berikut.
 # Data Preperation
 • Train-Test-split, teknik ini berguna untuk membagi data menjadi data uji dan data latih. Teknik ini menggunakan fungsi train_test_split dari library scikit-learn.
 
-• Standarisasi, teknik ini membuat fitur data menjadi bentuk yang lebih mudah diolah oleh algoritma. Di sini kita mengurangkan mean (nilai rata-rata) pada seluruh fitur numerik kemudian membaginya dengan standar deviasi untuk menggeser distribusi menggunakan fungsi StandardScaler() dari library scikit-learn. Setelah kita mengecek informasi menggunakan fungsi .describe(), kita mengetahui bahwa mean pada fitur numerik berubah menjadi 0 dan standar deviasi-nya menjadi 1.
+• Standarisasi, teknik ini membuat fitur data menjadi bentuk yang lebih mudah diolah oleh algoritma. Di sini mengurangkan mean (nilai rata-rata) pada seluruh fitur numerik kemudian membaginya dengan standar deviasi untuk menggeser distribusi menggunakan fungsi StandardScaler() dari library scikit-learn. Setelah mengecek informasi menggunakan fungsi .describe(), kita mengetahui bahwa mean pada fitur numerik berubah menjadi 0 dan standar deviasi-nya menjadi 1.
 
 # Modelling
 ![image](https://user-images.githubusercontent.com/59913378/201859187-692a61e2-a724-4517-b0e3-7d45d0b91871.png)
