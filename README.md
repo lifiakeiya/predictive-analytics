@@ -5,7 +5,7 @@ Oada project kali ini ialah proyek di bidang ekonomi dan bisnis. Dalam dunia bis
 
 Salah satu tantangan yang dihadapi operasi penjualan adalah kondisi lingkungan. Kondisi lingkungan di sini seperti maraknya kejahatan, kekerasan, penjarahan, dll. Namun, apakah kondisi lingkungan tersebut memberikan peluang bagi para pelaku bisnis untuk menjalankan usahanya, atau justru sebaliknya? Dalam memprediksi permasalahan tersebut saya menggunakan 3 algoritma, yakni Linear Regression, KNN, dan Random Forest.
 # Bussiness understanding
-Perusahaan yang menjual rumah akan menjual rumah di tempat yang kondisi lingkungannya baik, dimana ada kasus kriminal pasti perusahaan akan bertanya-tanya apakah rumah yang kita jual akan laris manis dipasaran? Dengan sedikitnya jumlah kriminal maka diharapkan akan semakin meningkat harga jual rumahnya.
+Perusahaan yang menjual rumah akan menjual rumah di tempat yang kondisi lingkungannya baik, dimana ada kasus kriminal pasti perusahaan akan bertanya-tanya apakah rumah yang nantinya dijual akan laris manis dipasaran? Dengan sedikitnya jumlah kriminal maka diharapkan akan semakin meningkat harga jual rumahnya.
 # Problem Statements
 Berdasarkan situasi di atas, perusahaan akan mengembangkan sistem prediksi harga rumah untuk mengatasi masalah berikut:
 
@@ -13,17 +13,17 @@ Berdasarkan situasi di atas, perusahaan akan mengembangkan sistem prediksi harga
 
 • Jika rumah tersebut memiliki ciri atau kondisi kriminal tertentu, berapa harga jualnya?
 # Goals
-Untuk menjawab pertanyaan ini, kami akan melakukan pemodelan prediktif dengan tujuan atau sasaran berikut:
+Untuk menjawab pertanyaan diatas, maka hal yang akan dilakukan ialah membuat pemodelan prediktif dengan tujuan atau sasaran berikut:
 
-• Cari tahu fitur mana yang paling relevan dengan harga jual rumah. 
+• Mengetahui fitur mana yang paling relevan dengan harga jual rumah. 
 
 • Membuat model pembelajaran mesin yang dapat memprediksi harga jual rumah seakurat mungkin berdasarkan fitur yang ada.
 # Solution Statements
-• Regresi linier. Metode regresi linier dipilih sebagai metode peramalan dalam penelitian ini berdasarkan keunggulannya dalam mengestimasi parameter model sederhana dan data berbasis time-series. Selain itu, metode ini dapat dianalisis dengan beberapa variabel bebas (X) yang membuat hasil prediksi lebih akurat. Sisi negatifnya adalah prediksi dari regresi linier adalah perkiraan, sehingga masih ada kemungkinan ketidaksesuaian dengan data sebenarnya. Cara kerja regresi linier adalah dengan memanggil fungsi LinearRegression() yang kita impor dari library scikit-learn.
+• Regresi linier. Metode regresi linier dipilih sebagai metode peramalan dalam penelitian ini berdasarkan keunggulannya dalam mengestimasi parameter model sederhana dan data berbasis time-series. Selain itu, metode ini dapat dianalisis dengan beberapa variabel bebas (X) yang membuat hasil prediksi lebih akurat. Sisi negatifnya adalah prediksi dari regresi linier adalah perkiraan, sehingga masih ada kemungkinan ketidaksesuaian dengan data sebenarnya. Cara kerja regresi linier adalah dengan memanggil fungsi LinearRegression() yang  telah diimpor dari library scikit-learn.
 
-•	K-Nearest Neighbor. Pemilihan metode K-Nearest Neighbor sebagai metode prediksi pada penelitian ini didasari oleh kelebihannya yang mudah dipahami dan diimplementasikan, tangguh terhadap data training sample yang noisy, dan memiliki konsistensi yang kuat. Kekurangannya yakni perlu menentukan parameter k (jumlah tetangga terdekat), sensitif terhadap data outlier. Cara kerja K-Nearest Neighbor yakni dengan memanggil fungsi KNeighborsRegressor() yang kita import dari library scikit-learn.
+•	K-Nearest Neighbor. Pemilihan metode K-Nearest Neighbor sebagai metode prediksi pada penelitian ini didasari oleh kelebihannya yang mudah dipahami dan diimplementasikan, tangguh terhadap data training sample yang noisy, dan memiliki konsistensi yang kuat. Kekurangannya yakni perlu menentukan parameter k (jumlah tetangga terdekat), sensitif terhadap data outlier. Cara kerja K-Nearest Neighbor yakni dengan memanggil fungsi KNeighborsRegressor() yang telah diimport dari library scikit-learn.
 
-•	Random Forest. Pemilihan metode Random Forest sebagai metode prediksi pada penelitian ini didasari oleh kelebihannya yaitu dapat mengatasi noise dan missing value serta dapat mengatasi data dalam jumlah yang besar. Dan kekurangan pada algoritma Random Forest yaitu interpretasi yang sulit dan membutuhkan tuning model yang tepat untuk data. Cara kerja Random Forest yakni dengan memanggil fungsi RandomForestRegressor() yang kita import dari library scikit-learn.
+•	Random Forest. Pemilihan metode Random Forest sebagai metode prediksi pada penelitian ini didasari oleh kelebihannya yaitu dapat mengatasi noise dan missing value serta dapat mengatasi data dalam jumlah yang besar. Dan kekurangan pada algoritma Random Forest yaitu interpretasi yang sulit dan membutuhkan tuning model yang tepat untuk data. Cara kerja Random Forest yakni dengan memanggil fungsi RandomForestRegressor() yang telah diimport dari library scikit-learn.
 # Data Understanding
 Data yang digunakan yakni diunduh dari situs Kaggle yang berisi indeks harga nsa atau non seasonal index yang merupakan fitur yang akan diprediksi, fitur yang lain merupakan kondisi kriminal di sekitar rumah tersebut yang akan menjadi pertimbangan dalam prediksi ini. Deskripsi variabel pada dataset adalah sebagai berikut:
 
@@ -58,6 +58,8 @@ Untuk visualisasi heatmap (korelasi numeric features) adalah sebagai berikut.
 ![image](https://user-images.githubusercontent.com/59913378/201858094-17cbf1ef-ca93-4fcb-bd66-4fc9c5b97a0b.png)
 
 # Data Preperation
+Beberapa teknik yang digunakan pada tahapan Data Preparation ialah:
+
 • Train-Test-split, teknik ini berguna untuk membagi data menjadi data uji dan data latih. Teknik ini menggunakan fungsi train_test_split dari library scikit-learn.
 
 • Standarisasi, teknik ini membuat fitur data menjadi bentuk yang lebih mudah diolah oleh algoritma. Di sini mengurangkan mean (nilai rata-rata) pada seluruh fitur numerik kemudian membaginya dengan standar deviasi untuk menggeser distribusi menggunakan fungsi StandardScaler() dari library scikit-learn. Setelah mengecek informasi menggunakan fungsi .describe(), kita mengetahui bahwa mean pada fitur numerik berubah menjadi 0 dan standar deviasi-nya menjadi 1.
