@@ -57,7 +57,7 @@ Year index_nsa City, State Population Violent Crimes Homicides Rapes Assaults Ro
 
 4 1975.0 20.385 Seattle, WA 503500.0 3971.0 52.0 324.0 1492.0 2103.0
 
-Dari gambar diatas dijelaskan bahwa didalam data terdapat 1 data kategori bertipe object dan 8 data numerik float64. Visualisasi data kategori sebagai berikut.
+Visualisasi data kategori sebagai berikut: 
 <class ‘pandas.core.frame.DataFrame’>
 Int64Index: 1708 entries, 0 to 3476
 Data columns (total 9 columns):
@@ -84,7 +84,7 @@ Column Non-Null Count Dtype
 
 dtypes: float64(8), object(1)
 
-memory usage: 133.4+ KB
+Dari gambar diatas dijelaskan bahwa didalam data terdapat 1 data kategori bertipe object dan 8 data numerik float64.
 
 Untuk visualisasi distribusi data pada kolom dengan numeric features dan antar numeric features sebagai berikut.
 ![image](https://user-images.githubusercontent.com/59913378/201857596-58354dc1-43d4-4043-94d3-acac79167a49.png)
