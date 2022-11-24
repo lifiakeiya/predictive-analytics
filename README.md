@@ -45,17 +45,54 @@ Data yang digunakan yakni diunduh dari situs Kaggle yang berisi indeks harga nsa
 
 •	Homicides = Pembunuhan
 
-![image](https://user-images.githubusercontent.com/59913378/201852488-7e5caf3e-d0af-4d23-bba4-1b6116dd06f2.png)
-![image](https://user-images.githubusercontent.com/59913378/201852807-5546a8a8-faaa-4be6-8d13-0efb50ae979f.png)
+Year index_nsa City, State Population Violent Crimes Homicides Rapes Assaults Robberies
+
+0 1975.0 41.080 Atlanta, GA 490584.0 8033.0 185.0 443.0 3518.0 3887.0
+
+1 1975.0 30.750 Chicago, IL 3150000.0 37160.0 818.0 1657.0 12514.0 22171.0
+
+2 1975.0 36.350 Cleveland, OH 659931.0 10403.0 288.0 491.0 2524.0 7100.0
+
+3 1975.0 20.910 Oakland, CA 337748.0 5900.0 111.0 316.0 2288.0 3185.0
+
+4 1975.0 20.385 Seattle, WA 503500.0 3971.0 52.0 324.0 1492.0 2103.0
 
 Dari gambar diatas dijelaskan bahwa didalam data terdapat 1 data kategori bertipe object dan 8 data numerik float64. Visualisasi data kategori sebagai berikut.
-![image](https://user-images.githubusercontent.com/59913378/201857655-dc517859-2461-4a25-b573-8cf727dc69bc.png)
+<class ‘pandas.core.frame.DataFrame’>
+Int64Index: 1708 entries, 0 to 3476
+Data columns (total 9 columns):
+
+Column Non-Null Count Dtype
+
+0 Year 1708 non-null float64
+
+1 index_nsa 1708 non-null float64
+
+2 City, State 1708 non-null object
+
+3 Population 1708 non-null float64
+
+4 Violent Crimes 1708 non-null float64
+
+5 Homicides 1708 non-null float64
+
+6 Rapes 1708 non-null float64
+
+7 Assaults 1708 non-null float64
+
+8 Robberies 1708 non-null float64
+
+dtypes: float64(8), object(1)
+
+memory usage: 133.4+ KB
 
 Untuk visualisasi distribusi data pada kolom dengan numeric features dan antar numeric features sebagai berikut.
 ![image](https://user-images.githubusercontent.com/59913378/201857596-58354dc1-43d4-4043-94d3-acac79167a49.png)
 
 Untuk visualisasi heatmap (korelasi numeric features) adalah sebagai berikut.
 ![image](https://user-images.githubusercontent.com/59913378/201858094-17cbf1ef-ca93-4fcb-bd66-4fc9c5b97a0b.png)
+
+Dalam tahap ini saya melakukan Data loading dan proses EDA yang saya representasikan menggunakan visualisasi, diantaranya : Exploratory Data Analysis - Menangani Missing Value dan Outliers, visualisasinya menggunakan boxplot dari library seaborn Exploratory Data Analysis - Univariate Analysis, visualisasinya menggunakan plot dan histogram dari library matplotlib Exploratory Data Analysis - Multivariate Analysis, visualisasinya menggunakan catplot dari library seaborn
 
 # Data Preperation
 Beberapa teknik yang digunakan pada tahapan Data Preparation ialah:
@@ -65,13 +102,32 @@ Beberapa teknik yang digunakan pada tahapan Data Preparation ialah:
 • Standarisasi, teknik ini membuat fitur data menjadi bentuk yang lebih mudah diolah oleh algoritma. Di sini mengurangkan mean (nilai rata-rata) pada seluruh fitur numerik kemudian membaginya dengan standar deviasi untuk menggeser distribusi menggunakan fungsi StandardScaler() dari library scikit-learn. Setelah mengecek informasi menggunakan fungsi .describe(), kita mengetahui bahwa mean pada fitur numerik berubah menjadi 0 dan standar deviasi-nya menjadi 1.
 
 # Modelling
+Pada tahap ini mengembangkan model machine learning dengan tiga algoritma, yakni Linear Regression, K-Nearest Neighbor, Random Forest. Langkah selanjutnya yakni mengevaluasi performa masing-masing algoritma dan menentukan algoritma mana yang memberikan hasil prediksi terbaik. Langkah pertama dalam proses modeling yakni menyiapkan sebuah DataFrame baru untuk menampung berapa nilai mae-nya yang berfungsi pada proses analisis model. 
+
+- Linear Regression : Langkah pertama kita import terlebih dahulu fungsi LinearRegression() pada library scikit-learn. Setelah itu kita definisikan fungsi LinearRegression() ke dalam variabel baru bernama lin_reg. Kemudian kita uji model tersebut data uji kita yakni x_train dan y_train menggunakan fungsi .fit().
+Setelah kita uji model terebut, kita cek akurasinya menggunakan metrik mae dan masukan nilai mae nya ke DataFrame yang telah kita buat sebelumnya.
+- Nearest Neighbor : Langkah pertama kita import terlebih dahulu fungsi KNeighborsRegressor() pada library scikit-learn. Setelah itu kita definisikan fungsi KNeighborsRegressor() ke dalam variabel baru bernama knn. Kita masukkan juga parameter n_neighbors nya yakni berjumlah 10, yang berarti kita mendefinisikan nilai tetangga-nya 10. Kemudian kita uji model tersebut pada data uji kita yakni x_train dan y_train menggunakan fungsi .fit().
+Setelah kita uji model terebut, kita cek akurasinya menggunakan metrik mae dan masukan nilai mae nya ke DataFrame yang telah kita buat sebelumnya.
+- Random Forest : Langkah pertama kita import terlebih dahulu fungsi RandomForestRegressor() pada library scikit-learn. Setelah itu kita definisikan fungsi RandomForestRegressor() ke dalam variabel baru bernama RF. Pada fungsi tersebut kita tambahkan parameter n_estimators-nya 50, max_depth-nya 16, random_state-nya 55, n_jobs-nya -1. Kemudian kita uji model tersebut data uji kita yakni x_train dan y_train menggunakan fungsi .fit().
+Setelah kita uji model terebut, kita cek akurasinya menggunakan metrik mae dan masukan nilai mae nya ke DataFrame yang telah kita buat sebelumnya.
+
 ![image](https://user-images.githubusercontent.com/59913378/201859187-692a61e2-a724-4517-b0e3-7d45d0b91871.png)
 
 Tahap diatas untuk mengembangkan model machine learning dengan Linear Regression, K-Nearest Neighbor, Random Forest. Langkah selanjutnya yakni mengevaluasi performa masing-masing algoritma dan menentukan algoritma mana yang memberikan hasil prediksi terbaik. 
+
+
 # Evaluation
 ![image](https://user-images.githubusercontent.com/59913378/201860044-f6a8cfa4-6981-4590-9a3e-6c6c539e8fa9.png)
 
 Kode program diatas adalah teknik yang bertujuan untuk menghitung selisih rata-rata nilai sebenarnya dengan nilai prediksi biasa disebut dengan Mean Squared Error (MSE). Ouput yang akan dikeluarkan ialah: 
+
+train test
+
+LinearRegression 0.892576 0.96617
+
+KNN 0.380629 0.52106
+
+RandomForest 0.0456 0.33477
 
 ![image](https://user-images.githubusercontent.com/59913378/201860427-4b180498-80a9-49ea-bddb-6c10f5693844.png)
 ![image](https://user-images.githubusercontent.com/59913378/201860843-ccb42815-233c-4bdd-986a-80156d63b155.png)
@@ -80,7 +136,18 @@ Dari hasil diatas dapat disimpulkan kalau Random Forest mempunyai eror paling se
 
 Terakhir, Mengukur kinerja model menggunakan fungsi .score() dalam skala 100.
 
+Accuracy score dari model Linear Regression =  0.760807233952006
+
+Accuracy score dari model KNN               =  0.8710022235399519
+
+Accuracy score dari model Random Forest     =  0.9171194254885765
+
 ![image](https://user-images.githubusercontent.com/59913378/201861200-8fa28441-9cd7-40d2-9f0b-b211fb42ac8c.png)
 
 dari hasil diatas dapat dilihat akurasi pada model Random Forest yang paling tinggi, mencapai 90%
 
+# Kesimpulan
+Setelah melakukan analisis di atas, dapat kita jawab Problem Statements dan Goal yang saya buat di atas, yakni :
+
+1. Fitur-fitur kriminalitas di atas mempunyai korelasi yang kecil terhadap harga, sehingga tidak terlalu memengaruhi harga jual rumah.
+2. Model machine learning yang akurat sesuai dengan metrik evaluasi dari MSE dan accuracy yakni menggunakan model Random Forest.
