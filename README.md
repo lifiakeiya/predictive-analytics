@@ -94,6 +94,18 @@ Untuk visualisasi heatmap (korelasi numeric features) adalah sebagai berikut.
 
 Dalam tahap ini saya melakukan Data loading dan proses EDA yang saya representasikan menggunakan visualisasi, diantaranya : Exploratory Data Analysis - Menangani Missing Value dan Outliers, visualisasinya menggunakan boxplot dari library seaborn Exploratory Data Analysis - Univariate Analysis, visualisasinya menggunakan plot dan histogram dari library matplotlib Exploratory Data Analysis - Multivariate Analysis, visualisasinya menggunakan catplot dari library seaborn
 
+univariete analysis
+![image](https://user-images.githubusercontent.com/59913378/204694229-968f6ede-3f35-4537-8585-eb47d41bcb5a.png)
+![image](https://user-images.githubusercontent.com/59913378/204694594-886f4d5e-effa-478c-a38b-f5badbc3ab47.png)
+
+multivariety analysis
+![image](https://user-images.githubusercontent.com/59913378/204694748-fac10eb5-e52c-4480-b1c2-c4e51a853d34.png)
+
+![image](https://user-images.githubusercontent.com/59913378/204695371-7fe5d53a-1fdb-4162-91aa-0664e9ff413b.png)
+![image](https://user-images.githubusercontent.com/59913378/204695580-c13be8c5-caaa-46d5-874b-0d89bc44a56f.png)
+
+
+
 # Data Preperation
 Beberapa teknik yang digunakan pada tahapan Data Preparation ialah:
 
